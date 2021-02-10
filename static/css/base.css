@@ -1,0 +1,61 @@
+html {
+    height: 100%;
+}
+
+body {
+   /* width: 100vw;*/
+    height: calc(100vh - 147px);
+    background: url('/media/land-back.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+
+}
+
+.logo-txt{
+    font-family: 'Lobster', sans-serif;
+    color: black;
+}
+
+.top-nav{
+    height: 75px !important;
+}
+
+.main-overlay{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
+}
+
+.message-container {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 6666677777;
+}
+
+@media (min-width: 1200px) {
+    .container {
+      max-width: 80%;
+    }
+  }
+
+@media (min-width: 992px){
+
+    .header-container{
+        padding-top: 147px;
+
+    }
+}
+
+@media (max-width: 991px){
+
+    .header-container{
+        padding-top: 80px;
+        width: 100%;
+    }
+}

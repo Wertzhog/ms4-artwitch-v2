@@ -1,0 +1,60 @@
+<div class="collapse navbar-collapse" id="main-nav">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0 list-group"></ul>
+      
+      <li class="nav-item list-group-item dropdown border-0">
+        <a class="nav-link text-dark" href="#" id="all-products" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          All Products
+        </a>
+
+        <div class="dropdown-menu border-0 text-dark" aria-labelledby="all-products">
+          <a href="{% url 'products'%}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+          <a href="{% url 'products'%}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+          <a href="{% url 'products'%}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+          <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown list-group-item border-0">
+        <a class="nav-link text-dark" href="#" id="accessories-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Accessories
+        </a>
+
+        <div class="dropdown-menu border-0 text-dark" aria-labelledby="accessories-link">
+          <a href="{% url 'products'%}?category=bags" class="dropdown-item">Bags</a>
+          <a href="{% url 'products'%}?category=earrings" class="dropdown-item">Earrings</a>
+          <a href="{% url 'products'%}?category=knitted" class="dropdown-item">Knitted</a>
+          <a href="{% url 'products'%}?category=bracelets" class="dropdown-item">Bracelets</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown list-group-item border-0">
+        <a class="nav-link text-dark" href="#" id="kids-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Kids
+        </a>
+
+        <div class="dropdown-menu border-0 text-dark" aria-labelledby="kids-link">
+          <a href="{% url 'products'%}?category=kid_clothes" class="dropdown-item">Clothes</a>
+          <a href="{% url 'products'%}?category=kid_toys" class="dropdown-item">Toys</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown list-group-item border-0">
+        <a class="nav-link text-dark" href="#" id="clothing-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Clothing
+        </a>
+
+        <div class="dropdown-menu border-0 text-dark" aria-labelledby="clothing-link">
+          <a href="{% url 'products'%}?category=clothing_women" class="dropdown-item">Womens</a>
+          <a href="{% url 'products'%}?category=clothing_mens" class="dropdown-item">Mens</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown list-group-item border-0">
+        <a class="nav-link text-dark" href="#" id="deals-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Deals
+        </a>
+
+        <div class="dropdown-menu border-0 text-dark" aria-labelledby="deals-link">
+          <a href="{% url 'products'%}?category=clothing_women" class="dropdown-item">Women</a>
+          <a href="{% url 'products'%}?category=clothing_mens" class="dropdown-item">Men</a>
+          <a href="{% url 'products'%}?category=kid_clothes,kid_toys" class="dropdown-item">Kids</a>
+        </div>
+      </li>
+    </ul>
+</div>

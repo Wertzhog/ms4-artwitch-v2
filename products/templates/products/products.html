@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="header-container">
+        <div class="row">
+            <div class="col">
+            </div>
+        </div>
+    </div>
+    <hr class="w-100 mx-auto">
+{% endblock %}
+
+{% block content %}
+    <div class="main-overlay"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col text-center my-4">
+                    <h2 class="logo-txt">Products</h2>
+                </div>
+            </div>
+            <div class="row">
+                {% for product in products %}
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 my-2">
+                    <div class="card h-100 px-3">
+                        {% if product.image %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img src="/media/{{ product.image}}" class="card-img-top img-fluid" alt="{{ product.name }}">
+                        </a>
+                        {% else %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}artwitch-noimg.jpg" alt="{{ product.name }}">
+                        </a>
+                        {% endif %}
+                        <div class="card-body">
+                          <h5 class="card-title">{{ product.name }}</h5>
+                        </div>
+                        <div class="card-footer bg-white pt-0 border-0 text-left">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="lead mb-0 text-left">€{{ product.price }}</p>
+                                    {% if product.category %}
+                                    <p class="small mt-1 mb-0">
+                                        <a href="{% url 'products' %}?category={{ product.category.name }}" class="text-reset">
+                                            <i class="bi bi-tag-fill"></i>{{ product.category.friendly_name }}
+                                        </a>
+                                    </p>
+                                    {% endif %}
+                                    {% if product.rating %}
+                                        <small class="text-muted"><i class="bi bi-star-fill"></i>{{ product.rating }} / 5</small>
+                                    {% else %}
+                                        <small class="text-muted">No Rating</small>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+{% endblock %}
