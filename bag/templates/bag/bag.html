@@ -29,6 +29,7 @@
                                 <tr>
                                     <th scope="col">Product Info</th>
                                     <th scope="col"></th>
+                                    <th scope="col">Size</th>
                                     <th scope="col">Quantity</th>
                                     <th scope="col">Price</th>
                                     <th scope="col">Total</th>
@@ -37,10 +38,16 @@
                             {% for item in bag_items %}
                             <tr>
                                 <td class="p-3 w-25">
+                                    <p class="my-1"><strong>{{ item.product.name }}</strong></p>
                                     <img src="/media/{{ item.product.image}}" class="img-fluid rounded" alt="{{ item.product.name }}">
                                 </td>
-                                <td class="py-4">
-                                    <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                <td></td>
+                                <td>
+                                {% if item.product.has_sizes %}
+                                    <p class="my-0">{{ item.size|upper }}</p>
+                                {% else %}
+                                <p class="my-0">N/A</p>
+                                {% endif %}
                                 </td>
                                 <td class="py-4">
                                     <p class="my-0">{{ item.quantity }}</p>
@@ -64,15 +71,17 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="5" class="text_right">
+                                <td class="text_right">
                                     <a href="{% url 'products' %}" class="btn btn-lg btn-outline-dark me-2">
                                         <span>
                                             <i class="bi bi-cart-fill"></i>
                                         </span>
                                         <span >Continue shopping!</span>
                                     </a>
+                                </td>
+                                <td class="text_right">
                                     <a href="" class="btn btn-lg btn-outline-dark">
-                                        <span class="text-uppercase">Secure checkout</span>
+                                        <span>Secure checkout</span>
                                         <span>
                                             <i class="bi bi-lock-fill"></i>
                                         </span>

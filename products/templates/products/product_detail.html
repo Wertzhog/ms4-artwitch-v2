@@ -49,6 +49,21 @@
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="row">
+                        {% if product.has_sizes %}
+                            <div class="col-12">
+                                <p class="mb-1">
+                                    <strong>Size:</strong>
+                                </p>
+                                <select class="form-select w-25 mb-1 mb-md-2" name="product_size" id="product_size">
+                                    <option value="xs">XS</option>
+                                    <option value="s">S</option>
+                                    <option value="m" selected>M</option>
+                                    <option value="l">L</option>
+                                    <option value="xl">XL</option>
+                                </select>
+                            </div>
+                        {% else %}
+                        {% endif %}
                             <div class="col-12">
                                 <p class="mt-3"><strong>Quantity:</strong></p>
                                 <div class="form-group w-25 mb-3 mb-md-5">
