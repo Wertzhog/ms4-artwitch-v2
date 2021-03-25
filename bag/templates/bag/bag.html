@@ -64,23 +64,23 @@
                             </tr>
                             {% endfor %}
                             <tr>
-                                <td colspan="5" class="text_right">
+                                <td colspan="5">
                                     <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
                                     <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
                                     <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text_right">
-                                    <a href="{% url 'products' %}" class="btn btn-lg btn-outline-dark me-2">
+                                <td >
+                                    <a href="{% url 'products' %}" class="btn btn-sm btn-outline-success me-2">
                                         <span>
                                             <i class="bi bi-cart-fill"></i>
                                         </span>
                                         <span >Continue shopping!</span>
                                     </a>
                                 </td>
-                                <td class="text_right">
-                                    <a href="" class="btn btn-lg btn-outline-dark">
+                                <td >
+                                    <a href="{% url 'checkout' %}" class="btn btn-sm btn-outline-dark">
                                         <span>Secure checkout</span>
                                         <span>
                                             <i class="bi bi-lock-fill"></i>
