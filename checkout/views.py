@@ -32,8 +32,8 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
-    stripe_public_key = nonono
-    stripe_secret_key = nonono  # dont forget to remove
+    stripe_public_key = "pk_test_51IYzBvFN6ZQOpXyoFeBqwjeqMSoCwcNVMhVeKVHK8MkfLCN3Ftg65zfdlr9QxIG4TokVI6gAPspS29ijSXWZl6Zo00Cmv2u7tq"
+    stripe_secret_key = "sk_test_51IYzBvFN6ZQOpXyoIpuxQIy0ZbRvKAcwDmCXPk2h3IaaxxmfgakX1jcPIFCsUtQPl1mEjSrPMCNNZqxSGXSGmmIQ00m1zxPcoF"  # dont forget to remove
 
     if request.method == 'POST':
         bag = request.session.get('bag', {})
