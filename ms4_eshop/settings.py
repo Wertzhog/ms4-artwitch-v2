@@ -37,7 +37,7 @@ else:
     DEBUG = True
 
 
-ALLOWED_HOSTS = ['artwitch-handmade.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['artwitch-handmade.herokuapp.com', 'localhost', '127.0.0.1', 'f9e832edb2ef.ngrok.io']
 
 
 # Application definition
@@ -210,3 +210,5 @@ STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')

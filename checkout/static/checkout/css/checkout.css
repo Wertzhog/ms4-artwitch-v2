@@ -1,3 +1,8 @@
+body{
+  background: white no-repeat center center fixed;
+ 
+}
+
 .StripeElement,
 .stripe-style-input {
   box-sizing: border-box;
