@@ -69,7 +69,7 @@ and that I would have design talks with friend for whom this web app is intended
 
 
 ### Mockups
- I created mockups for desktop primary and used Bootstrap to make them responsive for mobile. They can be found in [Mockups folder]().
+ I created mockups for desktop primary and used Bootstrap to make them responsive for mobile. They can be found in [Mockups folder](https://github.com/Wertzhog/ms4-artwitch-v2/tree/master/Mockups).
 
 ## Technologies Used
 
