@@ -11,8 +11,8 @@ def profile(request):
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
-
-    form = UserProfileForm(instance=profile)
+    else:
+        form = UserProfileForm(instance=profile)
 
     orders = profile.orders.all()
     template = 'profiles/profile.html'

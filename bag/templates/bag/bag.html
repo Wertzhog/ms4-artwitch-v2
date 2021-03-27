@@ -39,7 +39,11 @@
                             <tr>
                                 <td class="p-3 w-25">
                                     <p class="my-1"><strong>{{ item.product.name }}</strong></p>
-                                    <img src="/media/{{ item.product.image}}" class="img-fluid rounded" alt="{{ item.product.name }}">
+                                    {% if item.product.image %}
+                                    <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                    {% else %}
+                                    <img class="img-fluid rounded" src="{{ MEDIA_URL }}artwitch-noimg.jpg" alt="{{ item.product.name }}">
+                                    {% endif %}
                                 </td>
                                 <td></td>
                                 <td class="py-4">
