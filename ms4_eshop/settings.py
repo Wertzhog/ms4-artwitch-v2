@@ -37,7 +37,7 @@ else:
     DEBUG = True
 
 
-ALLOWED_HOSTS = ['artwitch-handmade.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['artwitch-handmade.herokuapp.com', 'localhost', '127.0.0.1', 'f9e832edb2ef.ngrok.io']
 
 
 # Application definition
