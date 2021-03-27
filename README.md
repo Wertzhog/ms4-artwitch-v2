@@ -219,5 +219,5 @@ and that I would have design talks with friend for whom this web app is intended
 
 ## Credits
 
-- Chris for exelent lesson in CI course. His code is backbone of project upon I built my very small contribution.
+- Chris for exelent lessons in CI course. His code is backbone of project upon which I built my very small contribution.
 
