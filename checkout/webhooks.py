@@ -11,8 +11,8 @@ import stripe
 def webhook(request):
     """Listen for webhooks from Stripe"""
     # Setup
-    wh_secret = "whsec_oezjHNrvA7y7lfFIyeXjQsi802ogVxvI"
-    stripe.api_key = "sk_test_51IYzBvFN6ZQOpXyoIpuxQIy0ZbRvKAcwDmCXPk2h3IaaxxmfgakX1jcPIFCsUtQPl1mEjSrPMCNNZqxSGXSGmmIQ00m1zxPcoF"
+    wh_secret = settings.STRIPE_WH_SECRET
+    stripe.api_key = settings.STRIPE_SECRET_KEY
 
     # Get the webhook data and verify its signature
     payload = request.body

@@ -19,7 +19,7 @@ import json
 def cache_checkout_data(request):
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
-        stripe.api_key = "sk_test_51IYzBvFN6ZQOpXyoIpuxQIy0ZbRvKAcwDmCXPk2h3IaaxxmfgakX1jcPIFCsUtQPl1mEjSrPMCNNZqxSGXSGmmIQ00m1zxPcoF" 
+        stripe.api_key = settings.STRIPE_SECRET_KEY
         stripe.PaymentIntent.modify(pid, metadata={
             'bag': json.dumps(request.session.get('bag', {})),
             'save_info': request.POST.get('save_info'),
@@ -34,8 +34,8 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
-    stripe_public_key = "pk_test_51IYzBvFN6ZQOpXyoFeBqwjeqMSoCwcNVMhVeKVHK8MkfLCN3Ftg65zfdlr9QxIG4TokVI6gAPspS29ijSXWZl6Zo00Cmv2u7tq"
-    stripe_secret_key = "sk_test_51IYzBvFN6ZQOpXyoIpuxQIy0ZbRvKAcwDmCXPk2h3IaaxxmfgakX1jcPIFCsUtQPl1mEjSrPMCNNZqxSGXSGmmIQ00m1zxPcoF"  # dont forget to remove
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
         bag = request.session.get('bag', {})
